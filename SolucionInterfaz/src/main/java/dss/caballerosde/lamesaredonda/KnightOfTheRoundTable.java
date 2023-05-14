@@ -5,7 +5,7 @@ public class KnightOfTheRoundTable implements Knight {
     private Quest<Treasure> quest;
     public KnightOfTheRoundTable(String name, Quest<Treasure> quest) {
         this.name = name;
-        this.quest = new HolyGrailQuest();
+        this.quest = quest;
     }
 
     public void setQuest(Quest<Treasure> quest) {

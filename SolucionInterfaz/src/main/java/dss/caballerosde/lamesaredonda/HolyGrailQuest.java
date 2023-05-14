@@ -13,6 +13,7 @@ public class HolyGrailQuest implements Quest<Treasure> {
     public Treasure embark() throws QuestFailedException {
         //...
         return new HolyGrail();
+        //return new UnholyGrail(); //this will fail the test and end in a terrible fate.
     }
 
 

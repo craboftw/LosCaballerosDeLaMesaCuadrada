@@ -93,14 +93,14 @@ public class AppConfig {
 
     @Bean
     public Treasure treasure() {
-        return new UnholyGrail();
+        return new HolyGrail();
     }
 }
 ```
 
 El bean `knight` define un objeto `KnightOfTheRoundTable` que se inyecta con la dependencia `quest` utilizando el constructor. Esto significa que el objeto `KnightOfTheRoundTable` ya no necesita crear la instancia de la búsqueda `HolyGrailQuest` por sí mismo, sino que la instancia se proporciona mediante la inyección de dependencia.
 
-Los beans `quest`, `holyGrailQuest` y `treasure` definen instancias de clases que implementan interfaces y se utilizan en otras partes del código. `quest` utiliza `holyGrailQuest` que es una instancia de `HolyGrailQuest` y `HolyGrailQuest` utiliza `treasure` que es una instancia de `UnholyGrail`.
+Los beans `quest`, `holyGrailQuest` y `Treasure` definen instancias de clases que implementan interfaces y se utilizan en otras partes del código. `quest` utiliza `holyGrailQuest` que es una instancia de `HolyGrailQuest` y `HolyGrailQuest` utiliza `treasure` que es una instancia de `HolyGrail`. Podemos alternar entre 'HolyGrail' y 'UnholyGrail' una instancia de 'Treasure' para lograr ver el funcionamiento de las beans.
 
 Con la configuración de Spring, la instancia de `KnightOfTheRoundTable` ahora se crea con las dependencias inyectadas por el contenedor de Spring. Esto hace que el código sea más modular y fácil de mantener, ya que las dependencias se administran centralmente en lugar de estar dispersas en todo el código.
 
